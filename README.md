@@ -88,7 +88,7 @@ ACCESS_KEY = +VW4OYL+9OGf81nvIu7Uqwy+RcqteBwwBTi3o1kk
 
 ## 클라이언트 폴더 커맨드
 
-클라이언트 폴더로 이동하면 (`cd ./client`) 다음 커맨드들을 이용할 수 있습니다.
+클라이언트 폴더로 이동하면 (`cd client`) 다음 커맨드들을 이용할 수 있습니다.
 
 - `yarn`: 클라이언트 프로젝트를 실행하기 위해 필요한 패키지를 내려받습니다. 패키지들이 아주 많아 용량이 매우 크니 유의하세요. 첫 실행에서는 3분 이상 걸리지만, 한 번 내려받은 다음에는 다시 내려받을 필요가 없습니다.
 
@@ -116,7 +116,7 @@ Secret Access Key - kAkRYbfgub92I1KKsm/2kZMG6tFjp3+XPZDl4to6
 배포하기 전! 먼저 자신의 IP가 memento AWS EC2 IP 화이트리스트와 memento mongoDB IP 화이트리스트에 포함되어있는지 확인하고, 없으면 추가해주세요!
 각각 네트워크 보안 탭에서 추가할 수 있습니다.
 
-먼저 클라이언트를 `yarn build && yarn deploy-prod`를 이용해 정적 배포합니다. 다음, memento AWS EC2에 접속하여 `~/welldying` 폴더에 있는 클론된 레포지토리에 들어가서, `git pull` 명령어를 입력합니다. (이를 위해 [PAT](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)를 만들어야 할 거에요..) Pull이 끝났으면 자동으로 서버가 재시작되겠지만 (`~/welldying/server` 폴더에서 `pm2 log` 또는 `pm2 monit`를 입력하면 실시간으로 현황을 볼 수 있습니다) 수동으로 서버를 재시작하고 싶을 때에는 `~/welldying/server` 폴더에서 `pm2 stop server && pm2 start`를 입력해 서버를 재시작할 수 있습니다.
+먼저 클라이언트 폴더에 들어가서 `yarn build && yarn deploy-prod`를 이용해 정적 배포합니다. 다음, memento AWS EC2에 접속하여 `~/welldying` 폴더에 있는 클론된 레포지토리에 들어가서, `git pull` 명령어를 입력합니다. (이를 위해 [PAT](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)를 만들어야 할 거에요..) Pull이 끝났으면 자동으로 서버가 재시작되겠지만 (`~/welldying/server` 폴더에서 `pm2 log` 또는 `pm2 monit`를 입력하면 실시간으로 현황을 볼 수 있습니다) 수동으로 서버를 재시작하고 싶을 때에는 `~/welldying/server` 폴더에서 `pm2 stop server && pm2 start`를 입력해 서버를 재시작할 수 있습니다.
 
 ssh -i memento_welldying.pem ubuntu@ec2-3-38-20-42.ap-northeast-2.compute.amazonaws.com 로 접속할 수 있습니다.
 
