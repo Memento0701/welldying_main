@@ -116,7 +116,7 @@ function ContentType (props : Props) {
             );
           } else {
               return (
-                <div className="page" style = {{padding: '62px 56px 0px 58px'}}>
+                <div className="page" style = {{padding: '62px 56px 0px 58px '}}>
                   <textarea name="" id="" cols = {36} rows={10} className="detail GB px13 line30" value = {content?.detail.bookdetail[key]} readOnly></textarea>
                 </div>
               );
